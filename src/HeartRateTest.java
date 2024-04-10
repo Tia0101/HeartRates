@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class HeartRateTest {
     public static void main (String [] args ) {
         Scanner input = new Scanner(System.in);
-        HeartRates client = new HeartRates("","",0000);
+        HeartRates client = new HeartRates("","",0000,0000);
 
         System.out.println("Please Enter your first name:");
         String clientFristName = input.next();
@@ -15,15 +15,20 @@ public class HeartRateTest {
         client.setLastName(clientLastName);
         System.out.println();
 
-       /*  System.out.println("Please Enter your birthday in yyyy format:");
+        System.out.println("Please Enter the year you were born in yyyy format:");// do error handling
         int clientBirthYear = input.nextInt();
         client.setBirthYear(clientBirthYear);
-        System.out.println();*/
+        System.out.println();
 
         System.out.printf("%n%s%s%n","Client's first name is: ", client.getFirstName());
         System.out.printf("%n%s%s%n","Client's last name is: ", client.getLastName());
+        System.out.printf("%n%s%s%n","Client's age is: ", client.age());
+        System.out.printf("%n%s%s%s%n","Your Client's heart rate should not exceed ", client.maxHeartRate(), " BPM");
+        System.out.printf("%n%s%n","Your client's target heart range is:");
+        System.out.println("Minimum: " + client.minTarget());
+        System.out.println("Maximum: " + client.maxTarget());
 
-        System.out.println("Testing for github");
+
 
 
     }
