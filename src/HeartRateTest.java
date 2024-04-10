@@ -23,7 +23,7 @@ public class HeartRateTest {
         System.out.printf("%n%s%s%n","Client's first name is: ", client.getFirstName());
         System.out.printf("%n%s%s%n","Client's last name is: ", client.getLastName());
 
-
+        System.out.println("Testing for github");
 
 
     }
