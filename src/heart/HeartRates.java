@@ -1,16 +1,20 @@
+package heart;
 import java.util.Calendar;
+
 public class HeartRates {
     private String firstName;
     private String lastName;
     private int birthYear;
     private int currentYear;
 
-    public HeartRates (String firstname,String lastName,int birthYear,int currentYear) {
+    public HeartRates (String firstName,String lastName,int birthYear,int currentYear) {
+        if (birthYear <= 1900 || birthYear > currentYear()) {
+            throw new IllegalArgumentException("Invalid birth year");
+        }
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthYear = birthYear;
         this.currentYear = currentYear;
-
     }
 
     public void setFirstName(String firstName) {
@@ -37,35 +41,27 @@ public class HeartRates {
         return birthYear;
     }
 
-    /*public int currentYear(){
+    public int currentYear(){
         Calendar thisYear = Calendar.getInstance();
         this.currentYear = thisYear.get(Calendar.YEAR);
         return currentYear;
-    }*/
+    }
 
-    public int age() {
-        Calendar thisYear = Calendar.getInstance();
-        this.currentYear = thisYear.get(Calendar.YEAR);
-
-        int age = currentYear - birthYear;
-        return age;
+    public int getAge() {
+        return currentYear() - birthYear;
     }
 
     public int maxHeartRate() {
-    int maxHeartRate =  220 - age();
-    return maxHeartRate;
+        return 220 - getAge();
     }
 
-    public int minTarget() {
-        int minTarget = (int)(maxHeartRate() * 0.5);
-        return minTarget;
+    public int getMinTarget() {
+        return (int)(maxHeartRate() * 0.5);
     }
 
-    public int maxTarget() {
-        int maxTarget = (int)(maxHeartRate() * 0.85);
-        return maxTarget;
+    public int getMaxTarget() {
+        return (int)(maxHeartRate() * 0.85);
     }
 }
 
-    
 
