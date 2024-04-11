@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 import heart.HeartRateCalc;
-import heart.HeartRates;
+import heart.HeartRateClientInfo;
 
 
-public class HeartRateTest {
+public class HeartRateTestApp {
     public static void main (String [] args ) {
         Scanner input = new Scanner(System.in);
 
@@ -22,7 +22,7 @@ public class HeartRateTest {
         System.out.println();
 
 
-        HeartRates client = new HeartRates(clientFristName,clientLastName,clientBirthYear,0000);
+        HeartRateClientInfo client = new HeartRateClientInfo(clientFristName,clientLastName,clientBirthYear,0000);
         HeartRateCalc clientCalc = new HeartRateCalc(clientBirthYear);
 
         System.out.printf("%n%s%s%n","Client's first name is: ", client.getFirstName());

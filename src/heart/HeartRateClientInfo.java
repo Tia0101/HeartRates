@@ -1,14 +1,14 @@
 package heart;
 import java.util.Calendar;
 
-public class HeartRates {
+public class HeartRateClientInfo {
     private String firstName;
     private String lastName;
     private int birthYear;
     private int currentYear;
 
-    public HeartRates (String firstName,String lastName,int birthYear,int currentYear) {
-        if (birthYear <= 1900 || birthYear > getCurrentYear()) {
+    public HeartRateClientInfo (String firstName,String lastName,int birthYear,int currentYear) {
+        if (birthYear <= 1900 || birthYear > currentYear()) {
             throw new IllegalArgumentException("Invalid birth year");
         }
         this.firstName = firstName;
@@ -41,15 +41,11 @@ public class HeartRates {
         return birthYear;
     }
 
-    public int getCurrentYear() {
-        return currentYear;
-    }
 
-    public void setCurrentYear(int currentYear) {
+    public int currentYear(){
         Calendar thisYear = Calendar.getInstance();
         this.currentYear = thisYear.get(Calendar.YEAR);
-        this.currentYear = currentYear;
-    }
+        return currentYear;
 }
 
-
+}
