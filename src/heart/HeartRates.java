@@ -8,7 +8,7 @@ public class HeartRates {
     private int currentYear;
 
     public HeartRates (String firstName,String lastName,int birthYear,int currentYear) {
-        if (birthYear <= 1900 || birthYear > currentYear()) {
+        if (birthYear <= 1900 || birthYear > getCurrentYear()) {
             throw new IllegalArgumentException("Invalid birth year");
         }
         this.firstName = firstName;
@@ -41,26 +41,14 @@ public class HeartRates {
         return birthYear;
     }
 
-    public int currentYear(){
-        Calendar thisYear = Calendar.getInstance();
-        this.currentYear = thisYear.get(Calendar.YEAR);
+    public int getCurrentYear() {
         return currentYear;
     }
 
-    public int getAge() {
-        return currentYear() - birthYear;
-    }
-
-    public int maxHeartRate() {
-        return 220 - getAge();
-    }
-
-    public int getMinTarget() {
-        return (int)(maxHeartRate() * 0.5);
-    }
-
-    public int getMaxTarget() {
-        return (int)(maxHeartRate() * 0.85);
+    public void setCurrentYear(int currentYear) {
+        Calendar thisYear = Calendar.getInstance();
+        this.currentYear = thisYear.get(Calendar.YEAR);
+        this.currentYear = currentYear;
     }
 }
 
