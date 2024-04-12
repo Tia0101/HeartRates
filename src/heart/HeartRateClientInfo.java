@@ -41,11 +41,9 @@ public class HeartRateClientInfo {
         return birthYear;
     }
 
-
-    public int currentYear(){
+    public int currentYear() {
         Calendar thisYear = Calendar.getInstance();
         this.currentYear = thisYear.get(Calendar.YEAR);
         return currentYear;
-}
-
+    }
 }
