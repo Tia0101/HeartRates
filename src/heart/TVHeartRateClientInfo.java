@@ -11,13 +11,13 @@
 package heart;
 import java.util.Calendar;
 
-public class HeartRateClientInfo {
+public class TVHeartRateClientInfo {
     private String firstName;
     private String lastName;
     private int birthYear;
     private int currentYear;
     // Constructor for HeartRateClientInfo class.
-    public HeartRateClientInfo (String firstName,String lastName,int birthYear,int currentYear) {
+    public TVHeartRateClientInfo (String firstName,String lastName,int birthYear,int currentYear) {
         if (birthYear <= 1900 || birthYear > currentYear()) {
             throw new IllegalArgumentException("Invalid birth year");
         }
@@ -50,7 +50,7 @@ public class HeartRateClientInfo {
     public int getBirthYear() {
         return birthYear;
     }
-    // I made method for current year instead of making an accessor and mutator method,
+    // I made this method for current year instead of making an accessor and mutator method,
     // because I thought that a program wouldn't ask the user what the current year was.
     //The user would expect the computer to know.
     public int currentYear() {

@@ -11,10 +11,10 @@
 
 import java.util.Scanner;
 
-import heart.HeartRateCalc;
-import heart.HeartRateClientInfo;
+import heart.TVHeartRateCalc;
+import heart.TVHeartRateClientInfo;
 
-public class HeartRateTestApp {
+public class TVHeartRateTestApp {
     public static void main (String [] args ) {
         Scanner input = new Scanner(System.in);
         String date;
@@ -48,15 +48,15 @@ public class HeartRateTestApp {
             clientBirthYear = input.nextInt();
         }
         //Client object created from the HeartRateClientInfo class
-        HeartRateClientInfo client = new HeartRateClientInfo(clientFristName,clientLastName,clientBirthYear,0000);
+        TVHeartRateClientInfo client = new TVHeartRateClientInfo(clientFristName,clientLastName,clientBirthYear,0000);
         //Calculation object created from clientCalc class
-        HeartRateCalc clientCalc = new HeartRateCalc(clientBirthYear);
+        TVHeartRateCalc clientCalc = new TVHeartRateCalc(clientBirthYear);
         //print outs to show data collected by each class, using accseors methods
         System.out.printf("%n%s%s%n","Client's first name is: ", client.getFirstName());
         System.out.printf("%n%s%s%n","Client's last name is: ", client.getLastName());
         System.out.printf("%n%s%s%n","Client's age is: ", clientCalc.getAge());
         System.out.printf("%n%s%s%s%n","Your client's heart rate should not exceed ", clientCalc.getMaxHeartRate(), " BPM!");
-        System.out.printf("%n%s%n","Your client's target heart range is:");
+        System.out.printf("%n%s%n","Your client's target heart rate range is:");
         System.out.println("Minimum: " + clientCalc.getMinTarget());
         System.out.println("Maximum: " + clientCalc.getMaxTarget());
     }

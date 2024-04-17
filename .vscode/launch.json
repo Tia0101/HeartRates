@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TVHeartRateTestApp",
+            "request": "launch",
+            "mainClass": "TVHeartRateTestApp",
+            "projectName": "HeartRates_733a2832"
+        },
+        {
+            "type": "java",
             "name": "HeartRateTestApp",
             "request": "launch",
             "mainClass": "HeartRateTestApp",

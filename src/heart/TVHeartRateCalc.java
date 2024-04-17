@@ -7,10 +7,10 @@
 package heart;
 import java.util.Calendar;
 
-public class HeartRateCalc {
+public class TVHeartRateCalc {
   private int birthYear;
   //constructor for HeartRateCalc class.
-  public HeartRateCalc(int birthYear) {
+  public TVHeartRateCalc(int birthYear) {
     this.birthYear = birthYear;
   
   }
