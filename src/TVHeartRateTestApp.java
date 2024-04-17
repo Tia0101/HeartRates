@@ -59,5 +59,6 @@ public class TVHeartRateTestApp {
         System.out.printf("%n%s%n","Your client's target heart rate range is:");
         System.out.println("Minimum: " + clientCalc.getMinTarget());
         System.out.println("Maximum: " + clientCalc.getMaxTarget());
+        System.out.println("github test");
     }
 }
